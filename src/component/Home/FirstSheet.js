@@ -6,12 +6,11 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import {colors} from '../../constants/colors';
-import { FINAL_WIDTH } from '../../constants/config';
+import {START_WIDTH} from '../../constants/config';
 import ServerDetails from '../FirstSheet/ServerDetails';
 import ServerNavbar from '../FirstSheet/ServerNavbar';
 
 const FirstSheet = ({sheetAnimVal, activeSheet}) => {
-
   const handleGesture = useAnimatedGestureHandler({
     onStart: (_, ctx) => {
       ctx.x = sheetAnimVal.value;
@@ -22,8 +21,7 @@ const FirstSheet = ({sheetAnimVal, activeSheet}) => {
       }
     },
     onEnd: (event, ctx) => {
-      console.log(event.translationX);
-      if (event.translationX < (FINAL_WIDTH) / 2) {
+      if (event.translationX < START_WIDTH / 2) {
         sheetAnimVal.value = withTiming(1);
         activeSheet.value = 2;
       } else {
