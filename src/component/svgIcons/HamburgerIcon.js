@@ -7,11 +7,10 @@ function HamBurgerIcon(props) {
       width={64}
       height={48}
       viewBox="0 0 64 48"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <Path d="M0 5h64M0 43h64M0 23h64" stroke="#000" strokeWidth={10} />
+      <Path fill="white" d="M0 5h64M0 43h64M0 23h64" stroke="#fff" strokeWidth={10} />
     </Svg>
   )
 }
